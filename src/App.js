@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import Characters from "./components/Character/Characters";
+import Episodes from "./components/Episode/Episodes";
+import Locations from "./components/Location/Locations";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import './App.scss'
+import Title from "./components/Title/Title";
+import { connect } from "react-redux";
+import { getCharacters } from './store/actions/characterActions'
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <div>
+            <Title/>
+            <ul className="navbar">
+              <li>
+                <Link className="linkClass" to="/">Home</Link>
+              </li>
+              <li>
+                <Link className="linkClass" to="/characters">Characters</Link>
+              </li>
+              <li>
+                <Link className="linkClass" to="/episodes">Episodes</Link>
+              </li>
+              <li>
+                <Link className="linkClass" to="/locations">Locations</Link>
+              </li>
+            </ul>
+        </div>
+          <Switch>
+            <Route path="/characters">
+              <Characters/>
+            </Route>
+            <Route path="/episodes">
+              <Episodes />
+            </Route>
+            <Route path="/locations">
+              <Locations />
+            </Route>
+          </Switch>
+      </Router>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({ characters: state.characters })
+export default connect(mapStateToProps, {getCharacters})(App)
+

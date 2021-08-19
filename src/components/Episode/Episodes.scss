@@ -1,0 +1,35 @@
+$back_color: black;
+$text_color_1: rgb(53, 232, 172);
+$text_color_2: white;
+$center_content: center;
+
+.episodes{
+    color: $text_color_2
+}
+
+.ep{
+    margin: 10px;
+    padding: 10px;
+    background-color: $back_color;
+    h3{
+        text-align: $center_content;
+        color: $text_color_1;
+    }
+    
+    
+    b{
+        color: $text_color_1;
+    }
+}
+
+.pagination{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: $center_content;
+}
+
+.blockk{
+    width: 1000px;
+    height: 10000px;
+    background-color: white
+}

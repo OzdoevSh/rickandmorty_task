@@ -1,0 +1,45 @@
+$back_color: black;
+$border_color: rgb(53, 232, 172);
+$text_color: white;
+$center_content: center;
+
+%borderType{
+  border: solid 2px $border_color;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: $center_content;
+    .label {
+      margin-right: 10px;
+      margin-left: 20px;
+      font-size: 18px;
+      color: $text_color;
+      padding-bottom: 6px;
+    }
+    
+    .select {
+      margin-bottom: 32px;
+      padding: 6px 8px;
+      font-size: 12px;
+      color: $text_color;
+      background-color: $back_color;
+      @extend %borderType;
+    }
+  
+    .searchBox {
+      width: 500px;
+      @extend %borderType;
+      margin: 32px 0 16px 0;
+      padding: 6px 8px;
+      font-size: 18px;
+      color: $text_color;
+      background-color: $back_color;
+  
+    }
+  }
+
+  
+  

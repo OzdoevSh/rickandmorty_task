@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap');
+
+$primary-color: rgb(53, 232, 172);
+$centerСontent: center;
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(22, 21, 21);
+    color: $primary-color;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(12, 12, 12);
+    li{
+        display: block;
+        padding: 0 20px;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-decoration: none;
+        .linkClass {
+            text-decoration: none;
+            color:white
+        }
+    }
+    
+    li:hover{
+        background-color: $primary-color;
+        .linkClass:hover {
+            color:black
+        }
+    }
+}
+
+
+
+
+

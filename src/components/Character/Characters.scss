@@ -1,0 +1,37 @@
+$back_color: black;
+$text_color_1: rgb(53, 232, 172);
+$text_color_2: white;
+$center_content: center;
+
+
+.character{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    color: $text_color_2
+}
+
+.char{
+    text-align: $center_content;
+    width: 350px;
+    margin-top: 10px;
+    background-color: $back_color;
+    h2{
+        color: $text_color_1;
+    }
+    
+    b{
+        color: $text_color_1;
+    }
+}
+
+
+.pagination{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: $center_content;
+}
+
+.filter{
+    text-align: $center_content;
+}

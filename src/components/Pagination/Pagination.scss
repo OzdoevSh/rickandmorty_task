@@ -1,0 +1,21 @@
+$back_color_1: black;
+$back_color_2: white;
+
+button {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  opacity: 100;
+  border: solid 2px rgb(53, 232, 172);
+  background-color: $back_color_1;
+  color:$back_color_2;
+  margin-right: 10px
+}
+  
+button:hover {
+  background-color: $back_color_2;
+  color: rgb(39, 36, 36);
+  cursor: pointer;
+}
+  
+
