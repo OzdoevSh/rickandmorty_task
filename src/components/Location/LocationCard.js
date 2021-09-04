@@ -1,16 +1,14 @@
-import {connect} from 'react-redux'
-import { getLocationCharacters } from '../../store/actions/characterActions'
-import {useEffect} from 'react'
-
-
-function EpisodeCard({ location, locationCharacters, getLocationCharacters }) {
+function LocationCard( props ) {
     
-    const {name, type, dimension, residents} = location
 
-    useEffect(() => {
-        getLocationCharacters(residents)
-    },[residents])
-
+    const {
+        data: {
+            name,
+            type,
+            residents,
+            dimension
+        }
+    } = props
     
 
     return (
@@ -19,13 +17,13 @@ function EpisodeCard({ location, locationCharacters, getLocationCharacters }) {
             <p><b>Type:</b> {type}</p>
             <p><b>Dimension:</b> {dimension}</p>
             {
-                <p><b>Characters:</b> {locationCharacters?.map((character, index) => <span>{(index ? ', ' : '') + character.name}</span>)}</p>
+                <p><b>Characters:</b> {residents.map((resident, index) => <span>{(index ? ', ' : '') + resident.name}</span>)}</p>
             }
         </div>
     )
 }
 
-const mapStateToProps  = (state) => ({locationCharacters: state.locations.locationCharacters })
 
-export default connect(mapStateToProps, {getLocationCharacters})(EpisodeCard)
+
+export default LocationCard
 

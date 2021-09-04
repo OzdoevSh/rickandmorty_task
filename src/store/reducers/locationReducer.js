@@ -1,9 +1,7 @@
-import {GET_LOCATIONS, GET_CHAR_OF_LOC} from '../types'
+import {GET_LOCATIONS} from '../types'
 
 const initialState = {
     locations:[],
-    locationCharacters: [],
-    error: "",
     loading: true,
     info: {}
 }
@@ -15,18 +13,14 @@ export default function locationReducer(state = initialState, action){
         case GET_LOCATIONS:
         return {
             ...state,
-            locations: action.payload.results,
-            info: action.payload.info,
-            loading: false
+            locations: action.payload.locations,
+            loading: false,
+            info: action.payload.info
+
         }
 
-        case GET_CHAR_OF_LOC:
-            return {
-                ...state,
-                locationCharacters: action.payload,
-                loading: false
-            }
         default: return state
+
     }
 
 }
